@@ -1,0 +1,2 @@
+{"company": {"name": "Lumen Atelier", "lang": "fr"}, "params": {"periode": "30", "ton": "sobre"},
+ "expect": {"report_contains": ["<h3", "<li"], "max_maic": 20, "max_seconds": 120}}

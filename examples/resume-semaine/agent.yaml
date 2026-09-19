@@ -1,0 +1,27 @@
+# Résumé de la semaine — agent maison (Ninabot), le premier agent réel du Bazar. Voir docs/agents.md.
+id: resume-semaine
+version: 1.0.0
+campus: biblio
+title: {fr: "Résumé de la semaine", en: "Weekly summary"}
+summary: {fr: "ce qui s'est passé : prospects, commandes, factures, et ce qu'il reste à faire", en: "what happened: leads, orders, invoices, and what is left to do"}
+params:
+  - {k: periode, type: select, o: [{v: "7", fr: "7 derniers jours", en: "Last 7 days"}, {v: "14", fr: "14 derniers jours", en: "Last 14 days"}, {v: "30", fr: "30 derniers jours", en: "Last 30 days"}], d: "7", l: {fr: "Période", en: "Period"}}
+  - {k: ton, type: select, o: [{v: "sobre", fr: "Sobre", en: "Plain"}, {v: "direct", fr: "Direct", en: "Direct"}], d: "sobre", l: {fr: "Ton", en: "Tone"}}
+reads: [leads, orders, invoices, contacts, memory]
+writes: [report, memory]
+network: []
+models: [tool]
+cost: {estimate_maic: 6, cap_maic: 20, rate_maic_h: 24}
+report: {title: {fr: "Résumé de la semaine", en: "Weekly summary"}}
+building:
+  footprint: 1x1
+  levels: 2
+  shape: terraces
+  glass: campus
+  roof: green
+  signature: terrace
+  glyph: "📰"
+  label: {fr: "Résumé", en: "Summary"}
+author: {sokkan_dev: "ninabot", name: "Ninabot Sàrl"}
+price: {per_run_maic: 4}
+license: maic-marketplace-1.0

@@ -1,0 +1,27 @@
+# Manifeste d'un agent MyAiCompany — voir docs/agents.md §2. Copie ce gabarit, change tout ce qui est entre < >.
+id: <mon-agent>                 # unique, kebab-case, = nom du dépôt
+version: 0.1.0                  # semver ; chaque publication = un tag
+campus: marche                  # studio | marche | scene | mairie | biblio | centrale
+title: {fr: "<Titre court>", en: "<Short title>"}
+summary: {fr: "<une phrase, celle du menu>", en: "<one sentence, the menu line>"}
+params:
+  - {k: sujet, type: text, required: true, l: {fr: "Sujet", en: "Subject"}, ph: {fr: "…", en: "…"}}
+  - {k: ton, type: select, o: [{v: "sobre", fr: "Sobre", en: "Plain"}, {v: "chaleureux", fr: "Chaleureux", en: "Warm"}], d: "sobre"}
+reads: [memory]                 # contacts | products | orders | invoices | leads | files | memory — le minimum
+writes: [report]                # report | products | contacts | files | memory (jamais ledger, jamais mail direct)
+network: []                     # hôtes externes autorisés, vide par défaut
+models: [tool]                  # paliers : tool | code | deal | pitch | ops | frontier (jamais un nom de modèle)
+cost: {estimate_maic: 20, cap_maic: 40, rate_maic_h: 30}
+report: {title: {fr: "<Titre du rapport>", en: "<Report title>"}}
+building:                       # le bâtiment de l'agent dans la ville — docs/buildings.md (obligatoire)
+  footprint: 2x1                # 1x1 | 2x1 | 2x2
+  levels: 2                     # 1..4
+  shape: slab                   # slab | ring | dome | hall | terraces | tower-low | pavilion
+  glass: campus                 # campus | blue | teal | slate | warm | plum | olive
+  roof: green                   # flat | green | solar | curved | dome
+  signature: awning             # awning | ring | dome | chimney | terrace | dish | canopy | atrium | none
+  glyph: ""                     # optionnel, ≤ 2 caractères, sur le toit
+  label: {fr: "<Nom au sol>", en: "<Ground label>"}   # ≤ 16 caractères, peint devant le bâtiment
+author: {sokkan_dev: "<dev-id>", name: "<Nom>"}
+price: {per_run_maic: 20}
+license: maic-marketplace-1.0

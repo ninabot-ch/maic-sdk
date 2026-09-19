@@ -1,0 +1,3 @@
+{"company": {"name": "Lumen Atelier", "lang": "fr"}, "params": {"sujet": "exemple 2", "ton": "sobre"},
+ "memory": ["Prix plancher : 89 CHF.", "Délai réel d'atelier : 6 jours."],
+ "expect": {"report_contains": ["exemple 2"], "max_maic": 40, "max_seconds": 120}}
